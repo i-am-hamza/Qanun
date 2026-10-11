@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { en } from '@/lib/copy/en'
 
+// params is runtime data; opt into blocking render rather than static prerender
+export const instant = false
+
 interface Props {
   params: Promise<{ slug: string[] }>
 }
