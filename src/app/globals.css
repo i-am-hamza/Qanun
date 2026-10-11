@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-serif: var(--font-source-serif);
+  --font-sans-arabic: var(--font-ibm-plex-arabic);
+  --font-naskh: var(--font-noto-naskh);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-feature-settings: "tnum" on;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[lang="ar"] {
+  font-family: var(--font-ibm-plex-arabic), system-ui, sans-serif;
+  font-size: 1.12em;
+  line-height: 1.9;
+}
+
+.font-legal-en {
+  font-family: var(--font-source-serif), Georgia, serif;
+  line-height: 1.65;
+}
+
+.font-legal-ar {
+  font-family: var(--font-noto-naskh), serif;
+  line-height: 1.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
